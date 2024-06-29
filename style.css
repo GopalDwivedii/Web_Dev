@@ -1,0 +1,21 @@
+body{
+  background-image: url("welcome.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+h1{
+  display: inline-block;
+  background-color: black;
+  color:white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 26px;
+  font-family: monospace;
+  text-align: center;
+}
+
+.textl{
+  display: inline-block;
+  text-align: left;
+}
