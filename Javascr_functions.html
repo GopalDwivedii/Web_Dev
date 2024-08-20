@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <style>
+        .event-box { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+    <script>
+        function handleClick() { alert('Clicked!'); }
+        function handleMouseOver() { this.style.backgroundColor = 'yellow'; }
+        function handleMouseOut() { this.style.backgroundColor = ''; }
+        function handleKeyDown() { document.getElementById('status').textContent = 'Key Down!'; }
+        function handleKeyUp() { document.getElementById('status').textContent = 'Key Up!'; }
+        function handleChange() { document.getElementById('status').textContent = 'Changed!'; }
+        function handleLoad() { console.log('Page Loaded'); }
+        function handleSubmit(event) { event.preventDefault(); alert('Form Submitted!'); }
+        function handleFocus() { this.style.border = '2px solid blue'; }
+        function handleBlur() { this.style.border = ''; }
+    </script>
+</head>
+<body onload="handleLoad()">
+    <div class="event-box" onclick="handleClick()">Click Me</div>
+    <div class="event-box" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+        Hover Over Me
+    </div>
+    <input type="text" id="inputField" onkeydown="handleKeyDown()" onkeyup="handleKeyUp()" onfocus="handleFocus()" onblur="handleBlur()">
+    <select id="selectField" onchange="handleChange()">
+        <option value="">Select an option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </select>
+    <form onsubmit="handleSubmit(event)">
+        <button type="submit">Submit Form</button>
+    </form>
+    <p id="status">Status: Ready</p>
+</body>
+</html>
